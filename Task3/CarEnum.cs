@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Solution.Task3
 {
     class CarEnum : IEnumerator
-    {
+    {//лучше не использовать сокращения в названии переменных,полей и т.д.
         public Car[] _ap;
 
         int pos = -1;
