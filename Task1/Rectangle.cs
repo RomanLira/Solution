@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Solution.Task1
 {
     public class Rectangle : Figure
-    {
+    {//Поля не должны быть public, и лучше,если они начинаются с _
         public double a;
         public double b;
         string name = "rectangle";
