@@ -1,0 +1,6 @@
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\bin\Debug\Solution.exe.config
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\bin\Debug\Solution.exe
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\bin\Debug\Solution.pdb
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\obj\Debug\Solution.csprojResolveAssemblyReference.cache
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\obj\Debug\Solution.exe
+C:\Users\Ромчик\Desktop\VS 15\Solution\Solution\obj\Debug\Solution.pdb
