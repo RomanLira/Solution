@@ -5,30 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solution.Task3
+namespace Solution.Task7
 {
-    class CarEnum : IEnumerator
+    class CarEnum : IEnumerator 
     {
-        public Car[] _ap;
+        private Car[] _ap;
 
         int pos = -1;
-        public CarEnum(Car[] list)
+        public CarEnum(Car[] list) 
         {
             _ap = list;
         }
 
-        public bool MoveNext()
+        public bool MoveNext() 
         {
             pos++;
             return (pos < _ap.Length);
         }
 
-        public void Reset()
+        public void Reset() 
         {
             pos = -1;
         }
 
-        object IEnumerator.Current
+        object IEnumerator.Current 
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Solution.Task3
             }
         }
 
-        public Car Current
+        public Car Current 
         {
             get
             {

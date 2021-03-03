@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Solution.Task1;
 using Solution.Task3;
+using Solution.Task7;
 using Solution.Task8;
-using System.Threading;
+using Solution.Task9;
 using System.Diagnostics;
 
 namespace Solution
@@ -18,9 +17,9 @@ namespace Solution
             Figure F;
             int k;
             double a, b, c, r;
-            #region(Task 1)
+            #region(Task 3)
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Task 1");
+            Console.WriteLine("Task 3");
             Console.ResetColor();
 
             Console.WriteLine("What's figure? 1 - Rectangle, 2 - Circle, 3 - Triangle");
@@ -71,9 +70,9 @@ namespace Solution
                 default: break;
             }
             #endregion
-            #region(Task 2)
+            #region(Task 6)
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Task 2");
+            Console.WriteLine("Task 6");
             Console.ResetColor();
 
             int y = 123;
@@ -89,22 +88,27 @@ namespace Solution
             stopwatch.Stop();
             Console.WriteLine(stopwatch.ElapsedTicks);
             #endregion
-            #region(Task 3)
+            #region(Task 7)
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Task 3");
+            Console.WriteLine("Task 7");
             Console.ResetColor();
 
-            Car[] cars = new Car[3] // массив машин с разными типами
+            Car[] cars = new Car[3]
             {
                 new Car("Passenger car"),
                 new Car("Truck car"),
                 new Car("Racing car"),
             };
 
-            AutoPark ap = new AutoPark(cars); // отправляем в AutoPark для перечисления
+            AutoPark ap = new AutoPark(cars);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("'Foreach': ");
+            Console.ResetColor();
             foreach (Car car in ap)
-                Console.WriteLine(car.type); // вывод типов машин
-
+                Console.WriteLine(car.type);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("'While': ");
+            Console.ResetColor();
             var getenum = ap.GetEnumerator();
             while (getenum.MoveNext())
             {
@@ -170,9 +174,59 @@ namespace Solution
 
             var MaxProducts = products.Max(product => product.Number);
             Console.WriteLine("\nMaximum number of product: {0}", MaxProducts);
-        }
-        #endregion
+            Console.WriteLine();
+            #endregion
+            #region(Task 9)
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Task 9");
+            Console.ResetColor();
 
+            ArrayList squares = new ArrayList();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Current ArrayList:");
+            Console.ResetColor();
+            for (int i = 0; i < 10; i++)
+            {
+                int side = rand.Next(1, 11);
+                Square square = new Square(side);
+                squares.Add(square);
+                Console.WriteLine(squares[i]);
+            }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Sort ArrayList:");
+            Console.ResetColor();
+            squares.Sort();
+            foreach (var square in squares)
+                Console.WriteLine(square.ToString());
+
+            CompareTeams<Team> comparerteams = new CompareTeams<Team>();
+            List<Team> teams = new List<Team>();
+
+            teams.Add(new Team("FC Barcelona", 45));
+            teams.Add(new Team("Real Madrid CF", 47));
+            teams.Add(new Team("Sevilla FC", 38));
+            teams.Add(new Team("Valencia CF", 25));
+            teams.Add(new Team("Atletico Madrid", 52));
+            teams.Add(new Team("Real Sociedad", 40));
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Current TeamList");
+            Console.ResetColor();
+            foreach (var t in teams)
+            {
+                Console.WriteLine(t.ToString());
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Sort TeamList by points:");
+            Console.ResetColor();
+            teams.Sort(comparerteams);
+            foreach (var t in teams)
+                Console.WriteLine(t.ToString());
+            #endregion
+        }
+
+        #region(Generations)
         public static char GenerateChar(Random rand)
         {
             return (char)(rand.Next('a', 'z' + 1));
@@ -187,6 +241,7 @@ namespace Solution
             }
             return new string(names);
         }
+        #endregion
     }
 }
 

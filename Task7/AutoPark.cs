@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solution.Task3
+namespace Solution.Task7
 {
     class AutoPark : IEnumerable
     {
-        private Car[] _ap;
+        private Car[] _ap; 
 
-        public AutoPark(Car[] arr)
+        public AutoPark(Car[] arr) 
         {
-            _ap = new Car[arr.Length];
+            _ap = new Car[arr.Length]; 
 
             for (int i = 0; i < arr.Length; i++)
             {
@@ -21,12 +21,12 @@ namespace Solution.Task3
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator() 
         {
-            return (IEnumerator)GetEnumerator();
+            return GetEnumerator();
         }
 
-        public CarEnum GetEnumerator()
+        public CarEnum GetEnumerator() 
         {
             return new CarEnum(_ap);
         }

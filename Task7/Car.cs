@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solution.Task3
+namespace Solution.Task7
 {
-    public class Car
+    public class Car 
     {
-        public string type;
+        public string type; 
 
-        public Car(string type)
+        public Car(string type) 
         {
             this.type = type;
         }
