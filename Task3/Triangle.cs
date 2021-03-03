@@ -8,55 +8,9 @@ namespace Solution.Task3
 {
     class Triangle : Figure
     {
-        private double a;
-        private double b;
-        private double c;
-        
-
-        public double A
-        {
-            get
-            {
-                return a;
-            }
-            set
-            {
-                if (value <= 0)
-                    Console.WriteLine("Invalid value ");
-                else
-                    a = value;
-            }
-        }
-
-        public double B
-        {
-            get
-            {
-                return b;
-            }
-            set
-            {
-                if (value <= 0)
-                    Console.WriteLine("Invalid value ");
-                else
-                    b = value;
-            }
-        }
-
-        public double C
-        {
-            get
-            {
-                return c;
-            }
-            set
-            {
-                if (value <= 0)
-                    Console.WriteLine("Invalid value ");
-                else
-                    c = value;
-            }
-        }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
 
         public Triangle(double a, double b, double c)
         {
@@ -65,20 +19,15 @@ namespace Solution.Task3
             C = c;
         }
 
-        public override string Name
-        {
-            get { return nameof(Triangle); }
-        }
-
         public override double Perimeter()
         {
-            return a + b + c;
+            return A+B+C;
         }
 
         public override double Area()
         {
             double p = Perimeter() / 2;
-            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
 
         public override void Show()

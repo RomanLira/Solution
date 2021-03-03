@@ -8,8 +8,6 @@ namespace Solution.Task3
 {
     public abstract class Figure
     {
-        public abstract string Name { get; }
-
         public abstract double Perimeter();
 
         public abstract double Area();

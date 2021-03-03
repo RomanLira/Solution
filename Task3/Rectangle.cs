@@ -8,38 +8,8 @@ namespace Solution.Task3
 {
     public class Rectangle : Figure
     {
-        private double a;
-        private double b;
-
-        public double A
-        {
-            get
-            {
-                return a;
-            }
-            set
-            {
-                if (value <= 0)
-                    Console.WriteLine("Invalid value ");
-                else
-                    a = value;
-            }
-        }
-
-        public double B
-        {
-            get
-            {
-                return b;
-            }
-            set
-            {
-                if (value <= 0)
-                    Console.WriteLine("Invalid value ");
-                else
-                    b = value;
-            }
-        }
+        public double A { get; set; }
+        public double B { get; set; }
 
         public Rectangle(double a, double b)
         {
@@ -47,19 +17,14 @@ namespace Solution.Task3
             B = b;
         }
 
-        public override string Name
-        {
-            get { return nameof(Rectangle); }
-        }
-
         public override double Perimeter()
         {
-            return 2 * (a + b);
+            return 2 * (A + B);
         }
 
         public override double Area()
         {
-            return a * b;
+            return A * B;
         }
 
         public override void Show()
